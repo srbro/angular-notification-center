@@ -2,8 +2,24 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 700;
-  border: 1px solid var(--text-gray);
+  border: 1px solid var(--black);
   padding: 8px 18px;
-  background-color: transparent;
   cursor: pointer;
+
+  &.primary {
+    background-color: var(--text-gray);
+    color: var(--white);
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: var(--text-gray);
+  }
+
+  &:hover {
+    background-color: var(--yellow);
+    color: var(--white);
+  }
 }
+
+
