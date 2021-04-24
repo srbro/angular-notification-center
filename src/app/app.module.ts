@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {DashboardModule} from './pages/dashboard/dashboard.module';
+import {HeaderModule} from './components/organisms/header/header.module';
+import {NotificationsModule} from "./pages/notifications/notifications.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +13,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DashboardModule,
+    HeaderModule,
+    NotificationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
