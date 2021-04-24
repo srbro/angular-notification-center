@@ -1,5 +1,9 @@
 <div class="dashboard">
   <div class="container">
-    <app-infobox></app-infobox>
+    <app-infobox *ngIf="newNotification.title !== undefined" [title]="newNotification.title"></app-infobox>
+    <h1>Deine Yova Strategie</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam asperiores.
+    </p>
   </div>
 </div>

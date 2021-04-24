@@ -1,0 +1,34 @@
+.infobox, .description, .info-link {
+  display: flex;
+  align-items: center;
+}
+
+.infobox {
+  background-color: var(--pastel-blue);
+  padding: 8px 32px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+
+  .description {
+    width: 80%;
+
+    .informicon {
+      margin-right: 22px;
+      margin-top: 12px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .info-link {
+    width: 20%;
+    justify-content: flex-end;
+
+    .close-btn {
+      height: 20px;
+      width: 20px;
+      margin-left: 22px;
+      cursor: pointer;
+    }
+  }
+}
