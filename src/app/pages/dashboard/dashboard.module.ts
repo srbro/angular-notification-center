@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import {DashboardComponent} from './dashboard.component';
-import {ButtonModule} from '../../components/atoms/link-button/button.module';
+import {InfoboxModule} from '../../components/molecules/infobox/infobox.module';
 
 @NgModule({
   declarations: [
     DashboardComponent
   ],
   imports: [
-    ButtonModule
+    InfoboxModule
   ],
   entryComponents: [DashboardComponent],
   exports: [DashboardComponent]
