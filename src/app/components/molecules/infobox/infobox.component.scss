@@ -1,6 +1,12 @@
+@import '../../base/breakpoints';
+
 .infobox, .description, .info-link {
   display: flex;
   align-items: center;
+
+  @include media-breakpoint(xs) {
+    align-items: baseline;
+  }
 }
 
 .infobox {
@@ -8,15 +14,39 @@
   padding: 8px 32px;
   margin-bottom: 40px;
   justify-content: space-between;
+  position: relative;
+
+  @include media-breakpoint(xs) {
+    flex-wrap: wrap;
+  }
 
   .description {
     width: 80%;
 
+    @include media-breakpoint(xs) {
+      width: 100%;
+    }
+
     .informicon {
       margin-right: 22px;
-      margin-top: 12px;
-      width: 50px;
-      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+      max-width: 50px;
+      max-height: 50px;
+
+      @include media-breakpoint(xs) {
+        margin-right: 12px;
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+      }
+
+      img {
+        @include media-breakpoint(xs) {
+          margin-bottom: -12px;
+        }
+      }
     }
   }
 
@@ -24,11 +54,21 @@
     width: 20%;
     justify-content: flex-end;
 
+    @include media-breakpoint(xs) {
+      width: 100%;
+    }
+
     .close-btn {
       height: 20px;
       width: 20px;
       margin-left: 22px;
       cursor: pointer;
+
+      @include media-breakpoint(xs) {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
     }
   }
 }
