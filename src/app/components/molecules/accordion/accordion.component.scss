@@ -1,0 +1,79 @@
+@import '../../base/breakpoints';
+
+.accordion {
+  p {
+    @include media-breakpoint(xs) {
+      font-size: 13px;
+    }
+  }
+
+  .mat-accordion .mat-expansion-panel:last-of-type {
+    border-radius: 0;
+  }
+
+  .mat-expansion-panel {
+    box-shadow: none;
+
+    .mat-expansion-panel-header {
+      border-bottom: 3px solid var(--yellow-background);
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      &.emphasized {
+        font-weight: 700;
+      }
+
+      &-description {
+        p {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    mat-panel-title.mat-expansion-panel-header-title {
+      align-items: center;
+      width: 25%;
+      flex-grow: 0;
+
+      .status {
+        margin-right: 22px;
+        width: 5%;
+
+        .circle {
+          width: 15px;
+          height:  15px;
+          border-radius: 50%;
+          background-color: var(--pastel-blue);
+        }
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    padding: 20px 0;
+
+    @include media-breakpoint(xs) {
+      flex-direction: column-reverse;
+    }
+
+    .delete-btn {
+      margin-top: 16px;
+      width: 25%;
+      margin-left: 27px;
+
+      @include media-breakpoint(xs) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    .description {
+      width: 60%;
+
+      @include media-breakpoint(xs) {
+        width: 100%;
+      }
+    }
+  }
+}
