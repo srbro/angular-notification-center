@@ -1,0 +1,13 @@
+.accordion {
+  .mat-accordion .mat-expansion-panel:last-of-type {
+    border-radius: 0;
+  }
+
+  .mat-expansion-panel {
+    box-shadow: none;
+
+    .mat-expansion-panel-header {
+      border-bottom: 3px solid var(--yellow-background);
+    }
+  }
+}
