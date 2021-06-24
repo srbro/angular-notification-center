@@ -20,3 +20,10 @@ module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }
+
+// trying to solve problem with Browserslist
+const browserify = require('@cypress/browserify-preprocessor')
+
+module.exports = (on) => {
+  on('file:preprocessor', browserify())
+}

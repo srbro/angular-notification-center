@@ -1,11 +1,11 @@
 /// <reference types="cypress"/>
 
-Describe("First Test Suite", () => {
+describe("First Test Suite", () => {
     
     it("First test", () => {
 
-        cy.visit('/')
-        
+        cy.visit('http://localhost:4200/webpack-dev-server/')
+
 
 
 
