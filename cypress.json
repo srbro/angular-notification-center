@@ -1,0 +1,6 @@
+{
+    "baseURL":"http://localhost:4200/webpack-dev-server/",
+    "ignoreTestFiles":"**/examples/*",
+    "viewportHeight": 768,
+    "viewportWidth": 1024
+}
