@@ -2,20 +2,20 @@
   <mat-accordion>
     <div *ngFor="let notification of data, let i = index">
       <mat-expansion-panel id="{{'notify-' + i}}">
-        <mat-expansion-panel-header [ngClass]="notification.active ? 'emphasized' : ''" (click)="notification.active = false">
+        <mat-expansion-panel-header [ngClass]="notification.active ? 'emphasized' : ''" (click)="notification.active = false" data-cy="notificationPost">
           <mat-panel-title>
             <div class="status">
-              <div *ngIf="notification.active" class="circle"></div>
+              <div *ngIf="notification.active" class="circle" data-cy="activeCircle"></div>
             </div>
-            <p>{{convertDate(notification.date)}}</p>
+            <p data-cy="date">{{convertDate(notification.date)}}</p>
           </mat-panel-title>
           <mat-panel-description>
-            <p>{{notification.title}}</p>
+            <p data-cy="title">{{notification.title}}</p>
           </mat-panel-description>
         </mat-expansion-panel-header>
           <div class="accordion-content">
-            <div class="delete-btn"><app-button (click)="deleteNotification('notify-' + i)"  label="Löschen" stylingClass="secondary"></app-button></div>
-            <div class="description" [innerHTML]="notification.desc"></div>
+            <div class="delete-btn"><app-button (click)="deleteNotification('notify-' + i)"  label="Löschen" stylingClass="secondary" data-cy="deleteBtn"></app-button></div>
+            <div class="description" [innerHTML]="notification.desc" data-cy="description"></div>
           </div>
       </mat-expansion-panel>
     </div>

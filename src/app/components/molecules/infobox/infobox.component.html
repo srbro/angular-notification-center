@@ -1,12 +1,12 @@
 <div class="infobox">
   <div class="description">
     <div class="informicon">
-      <img src="./assets/icons/info.svg" alt="Information">
+      <img src="./assets/icons/info.svg" alt="Information" data-cy="iconInfoNotification">
     </div>
-  <p>{{title}}</p>
+  <p data-cy="titleNotification">{{title}}</p>
   </div>
   <div class="info-link">
-    <a routerLink="/notifications">Mehr erfahren</a>
-    <img class="close-btn" (click)="closeBox()" src="./assets/icons/close.svg" alt="Close">
+    <a routerLink="/notifications" data-cy="buttonMehr">Mehr erfahren</a>
+    <img class="close-btn" (click)="closeBox()" src="./assets/icons/close.svg" alt="Close" data-cy="closeButtonLandingPage">
   </div>
 </div>
