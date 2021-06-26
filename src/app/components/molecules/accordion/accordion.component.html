@@ -2,7 +2,7 @@
   <mat-accordion>
     <div *ngFor="let notification of data, let i = index">
       <mat-expansion-panel id="{{'notify-' + i}}">
-        <mat-expansion-panel-header [ngClass]="notification.active ? 'emphasized' : ''" (click)="notification.active = false" data-cy="notificationPost">
+        <mat-expansion-panel-header [ngClass]="notification.active ? 'emphasized' : ''" (click)="notification.active = false">
           <mat-panel-title>
             <div class="status">
               <div *ngIf="notification.active" class="circle" data-cy="activeCircle"></div>
