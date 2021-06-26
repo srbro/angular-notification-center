@@ -50,27 +50,26 @@ describe("Smoke Test Set", () => {
 
     })
 
-    it("Notification center page -> First Notification - Expand/Close, Delete", () => {
+    it.only("Notification center page -> First Notification - Expand/Close, Delete", () => {
 
         cy.iframe().find('[data-cy="buttonMehr"]').click()
         cy.frameLoaded('#iframe')
 
-        cy.iframe().find('[data-cy="notificationPost"]')
-            .first()
-            .find('.mat-expansion-panel-content ng-trigger ng-trigger-bodyExpansion')
+        cy.iframe().find('#mat-expansion-panel-header-0')
+            .find('#cdk-accordion-child-0')
             .should('not.exist')
-        cy.iframe().find('[data-cy="notificationPost"]')
+        cy.iframe().find('#mat-expansion-panel-header-0')
             .first().click()
-        cy.iframe().find('[data-cy="description"]')
+        cy.iframe().find('#cdk-accordion-child-0')
             .should('be.visible')
         cy.iframe().find('[data-cy="deleteBtn"]')
             .first()
             .should('be.visible')
-        cy.iframe().find('[data-cy="notificationPost"]')
+        cy.iframe().find('#mat-expansion-panel-header-0')
             .first().click()
-        cy.iframe().find('[data-cy="description"]')
+        cy.iframe().find('#cdk-accordion-child-0')
             .should('not.be.visible')
-        cy.iframe().find('[data-cy="notificationPost"]')
+        cy.iframe().find('#mat-expansion-panel-header-0')
             .first().click()
 
         // NEED TO FIND A WAY TO COLLECT THE TEXT OF THE NODE, DELETE THE NODE AND CHECK BY COLLECTED TEXT IF IT IS NOT.EXISTING
