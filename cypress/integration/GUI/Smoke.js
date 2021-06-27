@@ -4,7 +4,7 @@
 // https://www.cypress.io/blog/2020/02/12/working-with-iframes-in-cypress/#bonus-cypress-iframe-plugin
 import 'cypress-iframe'
 
-describe("Smoke Test Set", () => {
+describe("Landing page - Mehr button, Correct title and Close button", () => {
     
     beforeEach( () => {
         //open the landing page
@@ -12,7 +12,7 @@ describe("Smoke Test Set", () => {
         cy.frameLoaded('#iframe')
     })
 
-    it("Landing page - Mehr button, Correct title and Close button", () => {
+    it("Mehr button, Correct title", () => {
 
         //Test "Mehr" button and check if the notification post has the correct title
         cy.iframe().find('.infobox').then( infobox => {
@@ -38,9 +38,10 @@ describe("Smoke Test Set", () => {
             })
 
         })
+    
+    })
 
-        //Return to the landing page
-        cy.go('back')
+    it('Close button', () => {
 
         //Test the Close button
         cy.iframe().find('[data-cy="closeButtonLandingPage"]').click().should('not.be.visible')
@@ -49,10 +50,21 @@ describe("Smoke Test Set", () => {
 
     })
 
-    it("Notification center page -> First Notification -> Active Circle on/off", () => {
-        
+})
+
+
+
+describe("Notification center page -> First Notification - Active Circle on/off, Expand/Collapse and Delete", () => {
+
+    beforeEach( () => {
+        //open the landing page
+        cy.visit('http://localhost:4200/webpack-dev-server/')
+        cy.frameLoaded('#iframe')
         cy.iframe().find('[data-cy="buttonMehr"]').click()
         cy.frameLoaded('#iframe')
+    })
+
+    it("Active Circle on/off", () => {
 
         //Check if Active Circle is visible in the first notification and if it dissapears after the click on the notification
         cy.iframe().find('#mat-expansion-panel-header-0').first()
@@ -64,10 +76,7 @@ describe("Smoke Test Set", () => {
 
     })
 
-    it.only("Notification center page -> First Notification - Expand/Close, Delete", () => {
-
-        cy.iframe().find('[data-cy="buttonMehr"]').click()
-        cy.frameLoaded('#iframe')
+    it("Expand/Collapse", () => {
 
         //Check if the expanded area of the first notification is visible and click on the first notification
         cy.iframe().find('#mat-expansion-panel-header-0')
@@ -90,6 +99,10 @@ describe("Smoke Test Set", () => {
             .click()
         cy.iframe().find('#cdk-accordion-child-0')
             .should('not.be.visible')
+
+    })
+
+    it('Delete button function', () => {
 
         //Test the function of deleting the first notification
         cy.iframe().find('#mat-expansion-panel-header-0')
