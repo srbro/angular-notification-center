@@ -17,18 +17,20 @@ describe("Notification center page - Active Circle on/off, Expand/Collapse and D
     it("Active Circle on/off", () => {
 
         //Check each notification if it has Active Circle, visible and if it has, does it dissapear after the click on the notification
-        cy.iframe().find('mat-expansion-panel-header').each( expansionPanel => {
+        cy.iframe().find('mat-expansion-panel-header').each( (expansionPanel, i) => {
+
+            let num = i+1
+            cy.log('NOTIFICATION No ' + num)
 
             if( expansionPanel.find('[data-cy="activeCircle"]').length > 0 ){
-                //cy.log('VISIBLE CIRCLE - Index of expansionPanel is ' + expansionPanel(index))
-                cy.log('number of activeCircle found = ' + expansionPanel.find('[data-cy="activeCircle"]').length)
+                cy.log('NOT READ')
                 cy.wrap(expansionPanel)
                 .find('[data-cy="activeCircle"]').should('be.visible')
                 cy.wrap(expansionPanel).click()
                 .find('[data-cy="activeCircle"]').should('not.exist')
                 
             } else {
-                cy.log('NOT VISIBLE')
+                cy.log('ALREADY READ')
                 cy.wrap(expansionPanel)
                 .find('[data-cy="activeCircle"]').should('not.exist')
             }
